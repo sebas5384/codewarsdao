@@ -41,7 +41,9 @@
   },
   "description": "### **Welcome 👋** To get started with this course, clone this repo and follow these commands:",
   "main": "vite.config.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "node": "^16.14.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

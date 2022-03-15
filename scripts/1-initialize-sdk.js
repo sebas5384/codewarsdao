@@ -22,7 +22,7 @@ const sdk = new ThirdwebSDK(
     process.env.PRIVATE_KEY,
     ethers.getDefaultProvider(process.env.ALCHEMY_API_URL)
   )
-)
+);
 
 (async () => {
   try {
@@ -33,6 +33,6 @@ const sdk = new ThirdwebSDK(
     console.error(`Failed to get apps from the sdk`, err)
     process.exit(1)
   }
-})
+})()
 
 export default sdk
