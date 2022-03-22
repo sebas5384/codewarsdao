@@ -36,3 +36,6 @@ const sdk = new ThirdwebSDK(
 })()
 
 export default sdk
+
+const decimals = 18
+export const convertToDecimals = amount => ethers.utils.parseUnits(amount.toString(), decimals)

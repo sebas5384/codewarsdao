@@ -1,10 +1,10 @@
 import { ethers } from "ethers";
-import sdk from "./1-initialize-sdk.js";
+import sdk, {convertToDecimals} from "./1-initialize-sdk.js";
 
 const tokenModule = sdk.getTokenModule(process.env.TOKEN_THOR_ADDR);
 
-const decimals = 18
-const convertToDecimals = amount => ethers.utils.parseUnits(`${amount}`, decimals)
+// const decimals = 18
+// const convertToDecimals = amount => ethers.utils.parseUnits(`${amount}`, decimals)
 
 (async () => {
   try {
