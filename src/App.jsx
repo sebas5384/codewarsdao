@@ -89,7 +89,7 @@ const App = () => {
   if (!address) {
     return (
       <div className="landing">
-        <h1>Welcome to CodewarDAO</h1>
+        <h1>Welcome to CodeWarsDAO</h1>
         <button onClick={() => connectWallet("injected")}
           className="fadein btn-hero">
           Connect your wallet
