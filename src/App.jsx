@@ -10,7 +10,7 @@ const voteModule = sdk.getVoteModule("0x6d5A86cEBea4b1E102810E4d2C1451f432574367
 const collectionId = "0"
 
 const App = () => {
-  const {connectWallet, address, provider} = useWeb3()
+  const {connectWallet, address, provider, error} = useWeb3()
   const [hasClaimedNFT, setHasClaimedNFT] = useState(false)
   const [isClaiming, setIsClaiming] = useState(false)
   const [memberTokenAmounts, setMemberTokenAmounts] = useState({})
@@ -129,6 +129,16 @@ const App = () => {
       tokenAmount: ethers.utils.formatUnits(memberTokenAmounts[address] || 0, 18)
     }))
   }, [memberAddressess, memberTokenAmounts])
+
+  const unsupportedChain = error && error.name === "UnsupportedChainIdError"
+  if (unsupportedChain) {
+    return (
+      <div className="unsupported-network">
+        <h2>Please connect to Rinkeby</h2>
+        <p>This dApp only works on the Rinkeby network, please switch networks in your connected wallet</p>
+      </div>
+    )
+  }
 
   if (!address) {
     return (
